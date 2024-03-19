@@ -5,12 +5,16 @@
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <title>Vue mail list</title>
-    <link href='./style.css' rel='stylesheet'>
+
 </head>
 
 <body>
     <div id='app'>
-        <h1>{{randomMail}}</h1>
+        <ul v-for="(mail, index) in mailList">
+            <li>{{mail}}</li>
+        </ul>
+        <button @click=" generateMails()">Genera</button>
+
     </div>
     <!-- Development only cdn, disable in production -->
     <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
