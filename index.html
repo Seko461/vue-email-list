@@ -13,21 +13,14 @@
 
 <body>
     <div id='app'>
-        <div class="container p-5 d-flex flex-column align-items-center justify-content-center">
-
-            <div class="mail-window">
-                <ul v-for="(mail, i) in mailList">
-
-                    <li :class="[this.mailList[i] === this.mailList[10] ? '' : '',  this.tenOfTen === false ? 'no_display' : ''] "
-                        style="list-style: none">{{mail}}</li>
-
-                </ul>
-            </div>
-            <div class="controls d-flex gap-3">
+        <div class="container p-5 d-flex flex-column align-items-center justify-content-start">
+            <ul v-if="mailList.length == 10" class="mail-window">
+                <li v-for="mail in mailList" style="list-style:none">{{mail}}</li>
+            </ul>
+            <div class=" controls d-flex gap-3">
                 <button type="button" class="btn btn-success" @click.once=" generateMails()">Genera</button>
                 <button type="button" class="btn btn-danger" @click=" deleteAll()">Pulisci</button>
             </div>
-
         </div>
     </div>
     <!-- Development only cdn, disable in production -->
