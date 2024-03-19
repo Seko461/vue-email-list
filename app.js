@@ -4,6 +4,7 @@ createApp({
         return {
             mail: null,
             mailList: [],
+            clicked: "",
         }
     },
     methods: {
@@ -25,6 +26,10 @@ createApp({
             }
 
         },
+        deleteAll() {
+            location.reload()
+        }
+
 
 
 
