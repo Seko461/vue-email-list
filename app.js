@@ -4,11 +4,11 @@ createApp({
         return {
             mail: null,
             mailList: [],
-            clicked: "",
+            tenOfTen: "",
         }
     },
     methods: {
-        generateMails() {
+        generateMails(mail, i) {
 
             for (let i = 0; i < 10; i++) {
                 axios
@@ -18,21 +18,29 @@ createApp({
                         console.log(response.data.response);
                         this.mail = response.data.response
 
+
+
                         this.mailList.push(this.mail)
-                    })
+
+
+
+                    });
 
 
 
             }
+            console.log(this.mailList[i]);
 
         },
         deleteAll() {
             location.reload()
-        }
+        },
 
 
 
 
 
-    }
+    },
+
+
 }).mount('#app')
