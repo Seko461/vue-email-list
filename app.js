@@ -20,7 +20,7 @@ createApp({
                         this.mailList.push(this.mail)
                     })
 
-                // this.randomMail = response.data.response
+
 
             }
 
